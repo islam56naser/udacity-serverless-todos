@@ -16,7 +16,7 @@ export class TodosAccess {
     private readonly todosTable = process.env.TODOS_TABLE,
     private readonly todosBucket = process.env.TODOS_S3_BUCKET,
     private readonly todosIndex = process.env.TODOS_ID_INDEX,
-    private readonly urlExpiration = process.env.SIGNED_URL_EXPIRATION,
+    private readonly urlExpiration = Number(process.env.SIGNED_URL_EXPIRATION),
     private readonly s3 = new XAWS.S3({ signatureVersion: 'v4' }),
   ) {
 
